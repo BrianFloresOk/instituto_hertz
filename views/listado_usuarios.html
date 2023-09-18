@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../public/images/logo.jpg" type="image/x-icon">
+    <title>Lista de personal</title>
+    <link rel="stylesheet" href="../public/css/listado_usuario.css">
+    <script src="../public/js/header_footer.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo__division">
+            <div class="logo__container">
+                <a href="http://www.institutomusicalhz.com.ar/">
+                    <img src="../public/images/logo-dark.png" alt="logo-instituto">
+                </a>
+            </div>
+        </div>
+        <nav id="nav__division">
+            <ul>
+                <li>
+                    <a href="./admin_home.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="./listado_usuarios.html">Personal</a>
+                </li>
+                <li>
+                    <a href="#">Alumnos</a>
+                </li>
+                <li>
+                    <a href="#">Cursos</a>
+                </li>
+                <li>
+                    <a href="#">Configuraciones</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="user__division">
+            <div>
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div>
+                <p>Usuario</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <table id="personalTable">
+                <thead>
+                    <tr>
+                        <th>Nombre(s)</th>
+                        <th>Apellido(s)</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>Copyright&COPY; Conservatorio Hertz 2023</p>
+        </div>
+    </footer>
+    <script>
+
+        // URL de la API
+        const apiUrl = 'http://institutomusicalhz.com.ar:3009/personal/listado';
+
+        // Función para obtener y mostrar los datos de la API
+        async function fetchAndDisplayData() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                // Obtener el elemento de la tabla
+                const tableBody = document.getElementById('personalTable');
+
+                // Iterar a través de los datos y crear filas en la tabla
+                data.forEach((person, index) => {
+                    const row = tableBody.insertRow();
+
+                    row.insertCell(0).innerText = person.nombres;
+                    row.insertCell(1).innerText = person.apellidos;
+                    row.insertCell(2).innerText = person.email;
+                    // Aplicar clases de Bootstrap para alternar colores de fondo
+                    if (index % 2 === 0) {
+                        row.classList.add('table-primary');
+                    } else {
+                        row.classList.add('table-secondary');
+                    }
+                });
+            } catch (error) {
+                console.error('Error al obtener los datos de la API:', error);
+            }
+        }
+
+        // Llamar a la función para obtener y mostrar los datos
+        fetchAndDisplayData();
+        // Agregar un manejador de eventos para el botón
+        const addButton = document.getElementById('addButton');
+        addButton.addEventListener('click', function () {
+            // Redirigir a la página nuevopersonal.html
+            window.location.href = 'nuevopersonal.html';
+        });
+    </script>
+</body>
+
+</html>
