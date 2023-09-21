@@ -1,0 +1,91 @@
+@import url("./general.css");
+@import url("./header_admin.css");
+@import url("./footer_admin.css");
+
+body {
+    background-color: gainsboro;
+}
+
+form {
+    padding: 1.5rem 3rem;
+    width: 50%;
+    margin: 2rem auto;
+    box-shadow: 0px 0px 2px 1px rgb(122, 121, 120);
+    border-radius: 8px;
+    background-color: white;
+}
+
+fieldset {
+    background-color: #fcfcfc;
+    border: thin solid lightgrey;
+    border-radius: 6px;
+    margin-bottom: 24px;
+
+    & legend {
+        margin: 16px 8px;
+        padding: 0 8px;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: white;
+    }
+}
+
+.input__container {
+    width: 480px;
+    margin: 0 auto 24px;
+    padding: 2px;
+    
+    & label {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+}
+
+.input_form {
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0px 0px 2px 1px rgb(196, 194, 196);
+}
+
+.button__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px auto;
+
+    & div {
+        width: 30%;
+    }
+
+    & button {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 1px 2px 4px -2px rgb(122, 121, 120);
+        }
+    }
+}
+
+#submit {
+    background-color: var(--bg-naranja);
+    color: white;
+    font-weight: 400;
+}
+
+#cancel {
+    background-color: var(--bg-gris);
+    color: white;
+}

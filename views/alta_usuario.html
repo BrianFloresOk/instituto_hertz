@@ -1,21 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../public/images/logo.jpg" type="image/x-icon">
-        <title>Alta personal</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../public/images/logo.jpg" type="image/x-icon">
+    <title>Alta personal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+    <link rel="stylesheet" href="../public/css/alta_usuario.css">
+    <script src="../public/js/header_footer.js" defer></script>
+</head>
+
 <body>
     <header></header>
 
     <main>
+        <div>
+            <form action="">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <div class="input__container">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" class="input_form">
+                    </div>
+                    <div class="input__container">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" class="input_form">
+                    </div>
+                    <div class="input__container">
+                        <label for="domicilio">Domicilio</label>
+                        <input type="text" id="domicilio" class="input_form">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Puesto laboral</legend>
+                    <div class="input__container">
+                        <label for="sector">Seleccione el sector</label>
+                        <select class="input_form">
+                            <option value="default" selected disabled id="sector">-- Ninguno --</option>
+                            <option value="1">Administración</option>
+                            <option value="2">Docencia</option>
+                            <option value="3">Mantenimiento</option>
+                        </select>
+                    </div>
+                    <div class="input__container">
+                        <label for="cargo">Seleccione el rol</label>
+                        <select class="input_form">
+                            <option value="default" selected disabled id="cargo">-- Ninguno --</option>
+                            <option value="1">Jefe de sector</option>
+                            <option value="2">Docente</option>
+                            <option value="3">Mantenimiento</option>
+                        </select>
+                    </div>
+                </fieldset>
 
+                <fieldset>
+                    <legend>Cuenta de acceso</legend>
+                    <div class="input__container">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="input_form">
+                    </div>
+                    <div class="input__container">
+                        <label for="contraseña1">Contraseña</label>
+                        <input type="password" id="contraseña1" class="input_form">
+                    </div>
+                    <div class="input__container">
+                        <label for="contraseña">Repetir contraseña</label>
+                        <input type="password" id="contraseña" class="input_form">
+                    </div>
+                </fieldset>
+                <div class="button__container">
+                    <div>
+                        <button id="submit">Crear usuario</button>
+                    </div>
+                    <div>
+                        <button id="cancel">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
-    
+
     <footer></footer>
 </body>
+
 </html>
